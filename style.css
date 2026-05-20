@@ -7,8 +7,10 @@
 
 body {
   background-image: url('bg.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* NAVBAR */
@@ -56,6 +58,55 @@ nav a:hover {
   margin-bottom: 1.5rem;
 }
 
+/* 1. Mengatur isi summary agar menyebar (Judul kiri, Tahun kanan) */
+.exp-header, .edu-header {
+  display: flex;
+  flex-direction: column; 
+  cursor: pointer;
+  list-style: none;       
+}
+
+/* 2. Menghilangkan tanda panah bawaan khusus browser Safari / Webkit */
+.exp-header::-webkit-details-marker, .edu-header::-webkit-details-marker {
+  display: none;
+}
+
+.exp-title-block, .edu-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Membuat judul & subtitle rata kiri sejajar */
+  text-align: left;
+  width: 100%;
+  gap: 4px;
+}
+
+.exp-title, .edu-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.exp-subtitle, .edu-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #222222;
+}
+
+/* Konten Detail */
+.exp-details, .edu-details {
+  margin-top: 15px;
+}
+
+.exp-details ul, .edu-details ul{
+  padding-left: 25px; 
+  margin: 0;
+}
+
+.exp-details li, .edu-details ul {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
 /* ABOUT */
 .about-container {
   display: flex;
@@ -91,21 +142,28 @@ nav a:hover {
 /* EDUCATION & EXPERIENCE CARD */
 .edu-card, .exp-card {
   background: #d9d9d9;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding-right: 20px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .edu-year, .exp-year {
   background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: bold;
+  color: #000000;
+  padding: 4px 14px;
+  align-self: flex-start;
+  margin-bottom: 10px;
 }
+  
 
 /* CERTIFICATION */
 .cert-grid {
